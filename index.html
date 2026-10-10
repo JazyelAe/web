@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Recetario | Cocina fácil todos los días</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#inicio">🍲 Mi Recetario</a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#recetas">Recetas</a>
+      <a href="#buscador">Buscador</a>
+      <a href="#enlinea">En línea</a>
+      <a href="#consejos">Consejos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div id="aviso" class="aviso" hidden></div>
+  <main>
+    <section id="inicio" class="hero">
+      <div>
+        <span class="tag">Cocina casera y sencilla</span> <span id="modo" class="modo local"></span>
+        <h1>Tu cocina,<br><em>tu próxima receta.</em></h1>
+        <p>Mi Recetario reúne recetas rápidas con ingredientes fáciles de conseguir, para que cocinar sea un gusto y no un problema.</p>
+        <a class="btn" href="#recetas">Ver recetas →</a>
+        <a class="btn ghost" href="#consejos">Consejos</a>
+      </div>
+      <div class="hero-card">
+        <h3>Receta del día</h3>
+        <p class="big">🌮 Tacos de papa</p>
+        <p>Tiempo: 25 min · Dificultad: Fácil</p>
+        <div class="bar"><span style="width:85%"></span></div>
+        <small>Popularidad 85%</small>
+      </div>
+    </section>
+
+    <section id="recetas" class="block">
+      <h2>Recetas destacadas</h2>
+      <div class="filters" id="filters"></div>
+      <button id="seed" class="btn" hidden>Cargar recetas de ejemplo</button>
+      <div class="grid" id="grid"></div>
+      <details class="nueva">
+        <summary>➕ Agregar una receta</summary>
+        <form id="formReceta">
+          <input id="rNombre" placeholder="Nombre de la receta" maxlength="80" required>
+          <input id="rCat" placeholder="Categoría (Sopas, Antojitos…)" maxlength="30" required>
+          <input id="rMin" type="number" min="1" max="600" placeholder="Minutos de preparación">
+          <select id="rDif"><option>Muy fácil</option><option selected>Fácil</option><option>Media</option><option>Difícil</option></select>
+          <textarea id="rIng" rows="2" maxlength="300" placeholder="Ingredientes separados por comas" required></textarea>
+          <button class="btn" type="submit">Guardar receta</button>
+        </form>
+      </details>
+    </section>
+
+    <section id="buscador" class="block alt">
+      <h2>Buscador de recetas</h2>
+      <p>Escribe un ingrediente o el nombre de un platillo.</p>
+      <input id="q" type="search" placeholder="Ej. frijol, pollo, aguacate…">
+      <p id="count" class="count"></p>
+    </section>
+
+    <section id="enlinea" class="block">
+      <h2>Recetas en línea</h2>
+      <p>Consulta recetas reales desde el servicio público TheMealDB y guárdalas en tu recetario.</p>
+      <form id="formApi" class="fila"><input id="qApi" type="search" placeholder="Ej. chicken, pasta, beef…" required><button class="btn" type="submit">Buscar</button></form>
+      <p id="estadoApi" class="count"></p>
+      <div class="grid" id="gridApi"></div>
+    </section>
+
+    <section id="consejos" class="block">
+      <h2>Consejos de cocina</h2>
+      <div class="tips">
+        <article><span>🔪</span><h3>Prepara antes</h3><p>Corta y mide todos los ingredientes antes de encender la estufa.</p></article>
+        <article><span>🧂</span><h3>Prueba y ajusta</h3><p>Prueba la sazón al final y corrige la sal poco a poco.</p></article>
+        <article><span>⏱️</span><h3>Controla el tiempo</h3><p>Usa un temporizador para evitar que los alimentos se pasen de cocción.</p></article>
+        <article><span>🧊</span><h3>Guarda bien</h3><p>Refrigera los sobrantes en recipientes cerrados durante un máximo de tres días.</p></article>
+      </div>
+    </section>
+
+    <section id="contacto" class="block alt">
+      <h2>Contacto</h2>
+      <form id="form">
+        <input id="nombre" placeholder="Tu nombre" required>
+        <input id="correo" type="email" placeholder="Tu correo" required>
+        <textarea id="msg" rows="3" placeholder="Cuéntanos qué receta quieres ver" required></textarea>
+        <button class="btn" type="submit">Enviar sugerencia</button>
+        <p id="ok" class="ok" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2026 Mi Recetario · Proyecto académico UTP</footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

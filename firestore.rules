@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Recetas: todos pueden leer, crear y borrar (proyecto escolar sin inicio de sesión).
+    match /recetas/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.nombre is string
+                    && request.resource.data.nombre.size() > 0
+                    && request.resource.data.nombre.size() <= 80
+                    && request.resource.data.ingredientes is string
+                    && request.resource.data.ingredientes.size() <= 300;
+      allow delete: if true;
+      allow update: if false;
+    }
+
+    // Sugerencias del formulario de contacto: solo se pueden crear (se leen desde la consola de Firebase).
+    match /sugerencias/{id} {
+      allow read: if false;
+      allow create: if request.resource.data.mensaje is string
+                    && request.resource.data.mensaje.size() > 0
+                    && request.resource.data.mensaje.size() <= 500;
+    }
+  }
+}
