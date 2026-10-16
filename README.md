@@ -33,7 +33,8 @@ firestore.rules         reglas de seguridad para pegar en Firebase
    git commit -m "Mi Recetario con Firebase y API"
    git push
    ```
-9. En GitHub: Settings -> Pages -> Branch: main, carpeta / (root) -> Save. Quedará en https://TU_USUARIO.github.io/NOMBRE_DEL_REPO/
+9. En GitHub: Settings -> Pages -> Branch: main, carpeta / (root) -> Save. Quedará en [https://TU_USUARIO.github.io/NOMBRE_DEL_REPO/](https://jazyelae.github.io/web/)
+
 
 ## Notas
 - Si `firebase-config.js` sigue con "TU_...", la app funciona en MODO LOCAL (guarda en el navegador) para que puedas probarla sin Firebase.
